@@ -1,38 +1,22 @@
-"use strict";
+"use strict"; //чтобы код был современным
 
-console.log('arr' + ' - object');
-console.log(4 + + '5');// + перед чем-то - унарный плюс
+const numberOfFilms = +prompt('Сколько фильмо вы уже посмотрели?', '');
 
-let incr = 10, // так тоже можно записывать переменные если они подряд
-	decr = 10;
+const personalMovieDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    genres: [],
+    privat: false
+};
 
-//incr++; // 11 префиксный инкримент 
-//decr--; // 9 префиксный дикримент
-
-
-console.log(incr++); // 10 постфиксный инкримент / возвращает сперва старое значение а после +1
-console.log(decr--); // 10 постфиксный дикримент / возвращает сперва старое значение а после -1
-
-
-console.log(6%2); // 0 тут ничего не осталось от деления
-console.log(5%2); // 1 - тут остаток от деления 
-
-let prisv = 1; // один = это присваивание
-console.log(2*4 == '8'); // == сравнение
-console.log(2*4 === 8); // === строгое равенство, сравнивает и по типу данных
-
-const isChecked = true,
-      isClose = false;
-
-console.log(isChecked && isClose); // оператор И - && работает только если оба true если хоть один false будет false
-
-console.log(isChecked || isClose); // оператор ИЛИ - && работает только если хотя бы один true если хоть один будет true будет true
-
-console.log(!isChecked || isClose); // ! - оператор отрицания переделывает true или false в противоположную
-
-console.log(2 + 2 * 2 !== '8'); // != не равен будет true и другие !==  !===
-console.log(2 + 2 * 2 === 8); // приоритеты = * первым / + вторым / === последний
+const lastNameMovie = prompt('Один из последних просмотренных фильмов?', ''),
+      lastGradeMovie = +prompt('На сколько оцените его?', ''),
+      lastNameMovie2 = prompt('Один из последних просмотренных фильмов?', ''),
+      lastGradeMovie2 = +prompt('На сколько оцените его?', '');
 
 
+personalMovieDB.movies[lastNameMovie] = lastGradeMovie;
+personalMovieDB.movies[lastNameMovie2] = lastGradeMovie2;
 
-
+console.log(personalMovieDB);
